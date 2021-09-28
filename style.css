@@ -13,6 +13,7 @@ body {
 
 :root {
   --desaturated-red: hsl(0, 36%, 70%);
+  --desaturated-red-shadow: hsl(0, 36%, 70%, 0.44);
   --soft-red: hsl(0, 93%, 68%);
   --dark-grayish-red: hsl(0, 6%, 24%);
   --blue: hsl(228, 45%, 44%);
@@ -33,6 +34,7 @@ h1,
 h1 {
   font-size: 2.6rem;
   font-weight: 400;
+  color: var(--dark-grayish-red);
   text-transform: uppercase;
   letter-spacing: 10px;
   line-height: 1.1;
@@ -51,7 +53,7 @@ h1 span {
 
 ::placeholder {
   color: var(--desaturated-red);
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 /* Layout */
@@ -68,7 +70,7 @@ main {
 
 .logo {
   width: 100px;
-  padding: 2em;
+  margin: 2em;
 }
 
 .hero-img-desktop {
@@ -113,7 +115,13 @@ button {
   border: none;
   border-radius: 30px;
   cursor: pointer;
-  box-shadow: 0px 20px 55px var(--desaturated-red);
+  box-shadow: 0px 7px 30px 0px var(--desaturated-red-shadow);
+}
+
+button:hover,
+button:focus {
+  background: hsl(0, 80%, 86%);
+  box-shadow: 0px 7px 30px 0px var(--desaturated-red);
 }
 
 button span {
@@ -138,6 +146,8 @@ form .icon-error {
   color: var(--blue);
 }
 
+/* Media Queries */
+
 @media (min-width: 1440px) {
   .hero-img-mobile {
     display: none;
@@ -147,11 +157,71 @@ form .icon-error {
   }
   .columns {
     flex-direction: row;
+    justify-content: space-between;
   }
   .col-left {
-    width: 55%;
+    flex-basis: 50%;
+    background: hsl(0, 100%, 98%) url("images/bg-pattern-desktop.svg") no-repeat
+      center;
+    padding-left: 7em;
+  }
+  .logo {
+    width: 160px;
+    margin: 4em 3em 10em;
+  }
+  h1,
+  .welcome-msg {
+    text-align: left;
+  }
+  h1 {
+    font-size: 4rem;
+    letter-spacing: 15px;
+  }
+  .welcome-msg {
+    font-size: 1rem;
+    width: 80%;
+    opacity: 0.8;
+  }
+  form {
+    width: 72%;
+  }
+  form input {
+    padding: 1.5em 2em;
+  }
+  button {
+    right: -15%;
+    width: 100px;
+    height: 58px;
+  }
+  form .icon-error {
+    right: 15%;
+  }
+  ::placeholder {
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    margin: 0 auto;
+  }
+  .col-left {
+    flex-basis: 55%;
   }
   .col-right {
-    width: 45%;
+    flex-basis: 40%;
+  }
+  .logo {
+    margin-left: 6em;
+  }
+  h1 {
+    margin-bottom: 1em;
+  }
+  .welcome-msg {
+    font-size: 1.5rem;
+    margin-bottom: 2em;
+  }
+  form {
+    width: 50%;
   }
 }
