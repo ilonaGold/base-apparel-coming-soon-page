@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+/* Global styles */
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+}
+
+:root {
+  --desaturated-red: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+  --dark-grayish-red: hsl(0, 6%, 24%);
+  --blue: hsl(228, 45%, 44%);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Typography */
+
+h1,
+.welcome-msg {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.6rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  line-height: 1.1;
+}
+
+h1 span {
+  color: var(--desaturated-red);
+  font-weight: 300;
+}
+
+.welcome-msg {
+  font-size: 0.875rem;
+  color: var(--desaturated-red);
+  line-height: 1.4375;
+}
+
+::placeholder {
+  color: var(--desaturated-red);
+  opacity: 0.6;
+}
+
+/* Layout */
+
+.columns {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  width: 83%;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 100px;
+  padding: 2em;
+}
+
+.hero-img-desktop {
+  display: none;
+}
+
+.hero-img-mobile {
+  margin-bottom: 4em;
+}
+
+h1 {
+  margin-bottom: 0.5em;
+}
+
+.welcome-msg {
+  margin-bottom: 2em;
+}
+
+form {
+  position: relative;
+  width: 80%;
+  margin-bottom: 3em;
+}
+
+form input {
+  display: block;
+  width: 100%;
+  padding: 1.2em 2em;
+  border-radius: 50px;
+  border: 1px solid var(--desaturated-red);
+  background: transparent;
+}
+
+button {
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  border: none;
+  position: absolute;
+  top: 0;
+  right: -25%;
+  width: 65px;
+  height: 50px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0px 20px 55px var(--desaturated-red);
+}
+
+button span {
+  position: absolute;
+  top: 30%;
+  right: 40%;
+}
+
+form .icon-error {
+  position: absolute;
+  top: 30%;
+  right: 5%;
+  display: none;
+}
+
+/* Footer */
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+}
+.attribution a {
+  color: var(--blue);
+}
+
+@media (min-width: 1440px) {
+  .hero-img-mobile {
+    display: none;
+  }
+  .hero-img-desktop {
+    display: initial;
+  }
+  .columns {
+    flex-direction: row;
+  }
+  .col-left {
+    width: 55%;
+  }
+  .col-right {
+    width: 45%;
+  }
+}
